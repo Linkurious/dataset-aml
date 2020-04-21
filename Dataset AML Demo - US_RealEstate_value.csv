@@ -1,43 +1,43 @@
 Contact,City,Type,price / sq feet - Low,price / sq feet - Median,price / sq feet - High
-HomesteadHOUSE,Homestead,HOUSE,3040,3810,4640
-HomesteadCONDO,Homestead,CONDO,2432,3048,3712
-NaranjaHOUSE,Naranja,HOUSE,3410,4410,5900
-NaranjaCONDO,Naranja,CONDO,2728,3528,4720
-PrincetonHOUSE,Princeton,HOUSE,4970,5770,7980
-PrincetonCONDO,Princeton,CONDO,3976,4616,6384
-GouldsHOUSE,Goulds,HOUSE,3050,3800,4650
-GouldsCONDO,Goulds,CONDO,2440,3040,3720
-Cutler BayHOUSE,Cutler Bay,HOUSE,3380,4090,4780
-Cutler BayCONDO,Cutler Bay,CONDO,2704,3272,3824
-Palmetto BayHOUSE,Palmetto Bay,HOUSE,3210,3930,4670
-Palmetto BayCONDO,Palmetto Bay,CONDO,2568,3144,3736
-KendallHOUSE,Kendall,HOUSE,3190,3830,4430
-KendallCONDO,Kendall,CONDO,2552,3064,3544
-PinecrestHOUSE,Pinecrest,HOUSE,5300,6040,7760
-PinecrestCONDO,Pinecrest,CONDO,4240,4832,6208
-Old CutlerHOUSE,Old Cutler,HOUSE,3280,4010,4860
-Old CutlerCONDO,Old Cutler,CONDO,2624,3208,3888
-MiamiHOUSE,Miami,HOUSE,4300,4750,5470
-MiamiCONDO,Miami,CONDO,3440,3800,4376
-West FlaglerHOUSE,West Flagler,HOUSE,2660,3140,3690
-West FlaglerCONDO,West Flagler,CONDO,2128,2512,2952
-East Little HavanaHOUSE,East Little Havana,HOUSE,3430,3840,4310
-East Little HavanaCONDO,East Little Havana,CONDO,2744,3072,3448
-WynwoodHOUSE,Wynwood,HOUSE,3350,4040,4820
-WynwoodCONDO,Wynwood,CONDO,2680,3232,3856
-EdgewaterHOUSE,Edgewater,HOUSE,3140,3950,4120
-EdgewaterCONDO,Edgewater,CONDO,2512,3160,3296
-Venetian IslandsHOUSE,Venetian Islands,HOUSE,5580,6350,7150
-Venetian IslandsCONDO,Venetian Islands,CONDO,4464,5080,5720
-Miami GardensHOUSE,Miami Gardens,HOUSE,1950,2480,2820
-Miami GardensCONDO,Miami Gardens,CONDO,1560,1984,2256
-Fort LauderdaleHOUSE,Fort Lauderdale,HOUSE,2980,3540,3980
-Fort LauderdaleCONDO,Fort Lauderdale,CONDO,2384,2832,3184
-Bay ColonyHOUSE,Bay Colony,HOUSE,3099,3682,4139
-Bay ColonyCONDO,Bay Colony,CONDO,2479,2946,3311
-Pompano BeachHOUSE,Pompano Beach,HOUSE,3223,3830,4304
-Pompano BeachCONDO,Pompano Beach,CONDO,2578,3064,3443
-Deerfield BeachHOUSE,Deerfield Beach,HOUSE,3351,3983,4476
-Deerfield BeachCONDO,Deerfield Beach,CONDO,2681,3186,3581
-Delray BeachHOUSE,Delray Beach,HOUSE,3485,4142,4655
-Delray BeachCONDO,Delray Beach,CONDO,2788,3314,3724
+HomesteadHOUSE,Homestead,HOUSE,305.02,382.28,465.56
+HomesteadCONDO,Homestead,CONDO,244.02,305.82,372.44
+NaranjaHOUSE,Naranja,HOUSE,342.14,442.48,591.98
+NaranjaCONDO,Naranja,CONDO,273.71,353.98,473.58
+PrincetonHOUSE,Princeton,HOUSE,498.67,578.93,800.68
+PrincetonCONDO,Princeton,CONDO,398.93,463.15,640.54
+GouldsHOUSE,Goulds,HOUSE,306.02,381.27,466.56
+GouldsCONDO,Goulds,CONDO,244.82,305.02,373.25
+Cutler BayHOUSE,Cutler Bay,HOUSE,339.13,410.37,479.6
+Cutler BayCONDO,Cutler Bay,CONDO,271.31,328.3,383.68
+Palmetto BayHOUSE,Palmetto Bay,HOUSE,322.08,394.32,468.57
+Palmetto BayCONDO,Palmetto Bay,CONDO,257.66,315.45,374.85
+KendallHOUSE,Kendall,HOUSE,320.07,384.28,444.49
+KendallCONDO,Kendall,CONDO,256.06,307.43,355.59
+PinecrestHOUSE,Pinecrest,HOUSE,531.78,606.02,778.6
+PinecrestCONDO,Pinecrest,CONDO,425.42,484.82,622.88
+Old CutlerHOUSE,Old Cutler,HOUSE,329.1,402.34,487.63
+Old CutlerCONDO,Old Cutler,CONDO,263.28,321.88,390.1
+MiamiHOUSE,Miami,HOUSE,431.44,476.59,548.83
+MiamiCONDO,Miami,CONDO,345.15,381.27,439.07
+West FlaglerHOUSE,West Flagler,HOUSE,266.89,315.05,370.24
+West FlaglerCONDO,West Flagler,CONDO,213.51,252.04,296.19
+East Little HavanaHOUSE,East Little Havana,HOUSE,344.15,385.29,432.44
+East Little HavanaCONDO,East Little Havana,CONDO,275.32,308.23,345.96
+WynwoodHOUSE,Wynwood,HOUSE,336.12,405.35,483.62
+WynwoodCONDO,Wynwood,CONDO,268.9,324.28,386.89
+EdgewaterHOUSE,Edgewater,HOUSE,315.05,396.32,413.38
+EdgewaterCONDO,Edgewater,CONDO,252.04,317.06,330.7
+Venetian IslandsHOUSE,Venetian Islands,HOUSE,559.87,637.13,717.4
+Venetian IslandsCONDO,Venetian Islands,CONDO,447.9,509.7,573.92
+Miami GardensHOUSE,Miami Gardens,HOUSE,195.65,248.83,282.95
+Miami GardensCONDO,Miami Gardens,CONDO,156.52,199.07,226.36
+Fort LauderdaleHOUSE,Fort Lauderdale,HOUSE,299,355.19,399.33
+Fort LauderdaleCONDO,Fort Lauderdale,CONDO,239.2,284.15,319.47
+Bay ColonyHOUSE,Bay Colony,HOUSE,310.94,369.43,415.29
+Bay ColonyCONDO,Bay Colony,CONDO,248.73,295.59,332.21
+Pompano BeachHOUSE,Pompano Beach,HOUSE,323.38,384.28,431.84
+Pompano BeachCONDO,Pompano Beach,CONDO,258.66,307.43,345.45
+Deerfield BeachHOUSE,Deerfield Beach,HOUSE,336.22,399.64,449.1
+Deerfield BeachCONDO,Deerfield Beach,CONDO,269,319.67,359.3
+Delray BeachHOUSE,Delray Beach,HOUSE,349.67,415.59,467.06
+Delray BeachCONDO,Delray Beach,CONDO,279.73,332.51,373.65
