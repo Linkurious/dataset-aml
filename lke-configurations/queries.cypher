@@ -106,7 +106,7 @@ match (a) where id(a) = {{"Person":node:"Person"}}
 match p = (a)-[*..4]-(b)
 where all(
     r in relationships(p)
-    where not type(r) in ["HAS_TRANSFERED"]
+    where not type(r) in ["HAS_TRANSFERED", "HAS_TRANSFERED_AGG"]
 )
 
 return p;
