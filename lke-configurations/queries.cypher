@@ -1,5 +1,6 @@
 // /*
-//  * Expand Edges
+//  * Name: Expand Edges
+//  * Desc: Expand all the connections of the relevant type between two nodes connected by an aggregated connection. Useful to unfold aggregated transactions created with Aggregate all transactions.
 //  */
 match (n)-[e]->(m) where id(e) = {{"EdgeID":number}}
 
@@ -11,7 +12,8 @@ return n, e2, m;
 
 
 // /*
-//  * Aggregate All Transactions
+//  * Name: Aggregate All Transactions
+//  * Desc: Allows to merge every single transaction between two nodes into one edge, representing the aggregated amount of every transactions. Useful to get a synthetic view of financial activity between two bank accounts.
 //  */
 with {{"Bank Accounts":nodeset:"BankAccount"}} as list
 unwind list as src_id
@@ -33,47 +35,8 @@ return src, t2, dst;
 
 
 // /*
-//  * Get Similar Real Estate
-//  * 
-//  * /!\ OBSOLETE /!\
-//  */
-match (loan) where id(loan) = {{"Real Estate":node:"MortgageLoan"}}
-with loan, collect(apoc.create.vNode(['REALESTATE_TRANSACTION'], {
-        id: id(loan),
-        contract_id: loan.contract_id,
-        transaction_date: loan.signature_date,
-        type: loan.type,
-        city: loan.city,
-        address: loan.address,
-        sqft: loan.sqft,
-        purchase_price: loan.purchase_price,
-        sqft_price: toInteger(loan.purchase_price / loan.sqft * 100) / 1000.0
-    })) as results
-
-// match (re:RealEstateValue) where re.city = loan.city and re.type = loan.type
-
-match (related_loan:MortgageLoan)
-where related_loan.city = loan.city and related_loan.type = loan.type
-
-with results, related_loan order by related_loan.purchase_price / related_loan.sqft
-
-with results + collect(apoc.create.vNode(['REALESTATE_TRANSACTION'], {
-        id: id(related_loan),
-        contract_id: related_loan.contract_id,
-        transaction_date: related_loan.signature_date,
-        type: related_loan.type,
-        city: related_loan.city,
-        address: related_loan.address,
-        sqft: related_loan.sqft,
-        purchase_price: related_loan.purchase_price,
-        sqft_price: toInteger(related_loan.purchase_price / related_loan.sqft * 100) / 100.0
-    })) as results
-
-return results;
-
-
-// /*
-//  * Check Real Estate Value
+//  * Name: Check Real Estate Value
+//  * Desc: Compute analysis on a set of Real Estate to check whether the transactions are UNDER or OVER price
 //  */
 match (loan) where id(loan) in {{"Real Estate":nodeset:"MortgageLoan"}}
 match (re:RealEstateValue) where re.city = loan.city and re.type = loan.type
@@ -99,7 +62,8 @@ return apoc.create.vNode(['REALESTATE_TRANSACTION'], {
 
 
 // /*
-//  * 4-Level Connection
+//  * Name: 4-Level Connection
+//  * Desc: Allows the analyst to unfold in 1 click connections to a node up to 4 jumps. The use is to quickly expand the network around a node without having to go through incremental expand.
 //  */
 match (a) where id(a) = {{"Person":node:"Person"}}
 
@@ -113,7 +77,8 @@ return p;
 
 
 // /*
-//  * Get UBOs
+//  * Name: Get UBOs
+//  * Desc: Allows to quickly reach the ultimate beneficial owners of a company without having to expand every successive intermediate nodes.
 //  */
 match (a) where id(a) = {{"Company":node:"Company"}}
 match p = (a)<-[:HAS_CONTROL*..10]-(b)
