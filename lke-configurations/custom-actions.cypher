@@ -10,4 +10,4 @@
 //  * 
 //  * queryId: id(Check Real Estate Value)
 //  */
-{{baseurl}}plugins/aml-realestate?queryId=XX&sourceKey={{sourcekey}}&param_ids_Real%20Estate={{nodeset:MortageLoan}}
+{{baseurl}}plugins/aml-realestate?queryId=XX&sourceKey={{sourcekey}}&param_ids_Real%20Estate={{nodeset:MortgageLoan}}

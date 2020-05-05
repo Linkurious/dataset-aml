@@ -220,12 +220,12 @@
     return re;
 
 
-// Mortage Loan: Person
+// Mortgage Loan: Person
     :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - MortgageLoans_Person.csv', ' ', '%20') as row
     with row
 
-    merge (loan:MortageLoan { uid: apoc.util.md5([row.`contract id`]) })
+    merge (loan:MortgageLoan { uid: apoc.util.md5([row.`contract id`]) })
     set
         loan.contract_id = row.`contract id`,
         loan.loan_amount = toFloat(row.`Initial amount`),
@@ -272,12 +272,12 @@
     return row, loan, client, guarantor, realtor, broker;
 
 
-// Mortage Loan: Company
+// Mortgage Loan: Company
     :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - MortgageLoans_Company.csv', ' ', '%20') as row
     with row
 
-    merge (loan:MortageLoan { uid: apoc.util.md5([row.`contract id`]) })
+    merge (loan:MortgageLoan { uid: apoc.util.md5([row.`contract id`]) })
     set
         loan.contract_id = row.`contract id`,
         loan.loan_amount = toFloat(row.`Initial amount`),
@@ -330,7 +330,7 @@
 
 
 // Create Bank accounts / Transactions
-    match (client:Person)-[:HAS_LOAN]->(loan:MortageLoan)
+    match (client:Person)-[:HAS_LOAN]->(loan:MortgageLoan)
     with client, loan order by client.uid, loan.signature_date
     with client, loan, coalesce(client.reg_number, client.client_id) as owner_id, collect(loan.signature_date)[0] as initial_date
 
@@ -369,7 +369,7 @@
 // Inject specific patterns
     // Create Early loan reimboursement
     with '2020-04-20' as early_redemption_date
-    match (client:Person { uid: apoc.util.md5(['71-2031902']) })-[:HAS_LOAN]->(loan:MortageLoan)
+    match (client:Person { uid: apoc.util.md5(['71-2031902']) })-[:HAS_LOAN]->(loan:MortgageLoan)
 
     match (client)-[:HAS_BANKACCOUNT]->(bank)-[t:HAS_TRANSFERED]->(internal_account:BankAccount { uid: apoc.util.md5(['00000-00-0000000']) })
     

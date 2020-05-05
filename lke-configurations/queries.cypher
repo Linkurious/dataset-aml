@@ -37,7 +37,7 @@ return src, t2, dst;
 //  * 
 //  * /!\ OBSOLETE /!\
 //  */
-match (loan) where id(loan) = {{"Real Estate":node:"MortageLoan"}}
+match (loan) where id(loan) = {{"Real Estate":node:"MortgageLoan"}}
 with loan, collect(apoc.create.vNode(['REALESTATE_TRANSACTION'], {
         id: id(loan),
         contract_id: loan.contract_id,
@@ -52,7 +52,7 @@ with loan, collect(apoc.create.vNode(['REALESTATE_TRANSACTION'], {
 
 // match (re:RealEstateValue) where re.city = loan.city and re.type = loan.type
 
-match (related_loan:MortageLoan)
+match (related_loan:MortgageLoan)
 where related_loan.city = loan.city and related_loan.type = loan.type
 
 with results, related_loan order by related_loan.purchase_price / related_loan.sqft
@@ -75,7 +75,7 @@ return results;
 // /*
 //  * Check Real Estate Value
 //  */
-match (loan) where id(loan) in {{"Real Estate":nodeset:"MortageLoan"}} // 4185
+match (loan) where id(loan) in {{"Real Estate":nodeset:"MortgageLoan"}}
 match (re:RealEstateValue) where re.city = loan.city and re.type = loan.type
 
 with loan, re, toInteger(loan.purchase_price / loan.sqft * 100) / 100.0 as avg_price
