@@ -24,5 +24,5 @@ MATCH (b:BankAccount)<-[hb:HAS_BANKACCOUNT]-(p:Person)-[hl:HAS_LOAN]->(m:Mortgag
 MATCH (b)-[mt:HAS_TRANSFERED]->(:BankAccount{contract_id:"00000-00-0000000"})
 UNWIND mt.amount as val
 WITH b, hb, hl, p, m,  min(val) as min, max(val) as max
-WHERE min < 100*max
+WHERE 100*min < max
 RETURN p, m, hb, hl, p.full_name, m.address
