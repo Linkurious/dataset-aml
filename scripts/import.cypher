@@ -375,7 +375,7 @@
     
     with
         early_redemption_date, client, loan, bank, internal_account,
-        reduce(amount = 0, tx in collect(t) | case when tx.date < early_redemption_date then amount + tx.amount else amount end) as current_reimboursement,
+        round(100 * reduce(amount = 0, tx in collect(t) | case when tx.date < early_redemption_date then amount + tx.amount else amount end)) / 100 as current_reimboursement,
         reduce(txs = collect(null), tx in collect(t) | case when tx.date >= early_redemption_date then txs + tx else txs end) as txs_to_delete
     
     merge (bank)-[tx:HAS_TRANSFERED { uid: apoc.util.md5([bank.uid, internal_account.uid, apoc.util.md5([bank.uid, internal_account.uid, early_redemption_date, loan.loan_amount - current_reimboursement])]) }]->(internal_account)
