@@ -1,31 +1,31 @@
 {
- "table": [
-  {
-   "basePath": "aml-transactions",
-   "entityType": "edge",
-   "itemType": "HAS_TRANSFERED",
-   "properties": [
-    "identifier",
-    "amount",
-    "date"
-   ]
-  },
-  {
-   "basePath": "aml-realestate",
-   "entityType": "node",
-   "itemType": "REALESTATE_TRANSACTION",
-   "properties": [
-    "contract_id",
-    "city",
-    "type",
-    "address",
-    "sqft",
-    "purchase_price",
-    "transaction_date",
-    "sqft_price",
-    "avg_sqft_price",
-    "price_range"
-   ]
-  }
- ]
+    "table": [
+        {
+            "basePath": "aml-transactions",
+            "entityType": "edge",
+            "itemType": "HAS_TRANSFERED",
+            "properties": [
+                "identifier",
+                "amount",
+                "date"
+            ]
+        },
+        {
+            "basePath": "aml-realestate",
+            "entityType": "node",
+            "itemType": "REALESTATE_TRANSACTION",
+            "properties": [
+                "contract_id",
+                "city",
+                "type",
+                "address",
+                "sqft",
+                "purchase_price",
+                "transaction_date",
+                "sqft_price",
+                "avg_sqft_price",
+                "price_range"
+            ]
+        }
+    ]
 }

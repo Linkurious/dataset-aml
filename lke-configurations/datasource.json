@@ -1,0 +1,16 @@
+{
+    "name": "AML (OKR)",
+    "readOnly": false,
+    "graphdb": {
+        "url": "http://localhost:7474",
+        "user": "myUser",
+        "password": "myPassword",
+        "alternativeNodeId": "uid",
+        "alternativeEdgeId": "uid",
+        "vendor": "neo4j"
+    },
+    "index": {
+        "indexEdges": false,
+        "vendor": "neo4jSearch"
+    }
+}

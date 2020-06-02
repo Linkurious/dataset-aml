@@ -1,153 +1,153 @@
 {
     "nodes": {
-     "Profession": {
-      "active": true,
-      "displayName": false,
-      "properties": [
-       "name"
-      ]
-     },
-     "Person": {
-      "active": true,
-      "displayName": false,
-      "properties": [
-       "full_name"
-      ]
-     },
-     "Client": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "BankAccount": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "MortageLoan": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "Company": {
-      "active": true,
-      "displayName": false,
-      "properties": [
-       "name"
-      ]
-     },
-     "Phone": {
-      "active": true,
-      "displayName": false,
-      "properties": [
-       "number"
-      ]
-     },
-     "Email": {
-      "active": true,
-      "displayName": false,
-      "properties": [
-       "email"
-      ]
-     },
-     "Industry": {
-      "active": true,
-      "displayName": false,
-      "properties": [
-       "name"
-      ]
-     },
-     "Broker": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "Realtor": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "Guarantor": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     }
+        "Profession": {
+            "active": true,
+            "displayName": false,
+            "properties": [
+                "name"
+            ]
+        },
+        "Person": {
+            "active": true,
+            "displayName": false,
+            "properties": [
+                "full_name"
+            ]
+        },
+        "Client": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "BankAccount": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "MortageLoan": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "Company": {
+            "active": true,
+            "displayName": false,
+            "properties": [
+                "name"
+            ]
+        },
+        "Phone": {
+            "active": true,
+            "displayName": false,
+            "properties": [
+                "number"
+            ]
+        },
+        "Email": {
+            "active": true,
+            "displayName": false,
+            "properties": [
+                "email"
+            ]
+        },
+        "Industry": {
+            "active": true,
+            "displayName": false,
+            "properties": [
+                "name"
+            ]
+        },
+        "Broker": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "Realtor": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "Guarantor": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        }
     },
     "edges": {
-     "HAS_PROFESSION": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_BANKACCOUNT": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_LOAN": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "IS_CONTROLLEDBY": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_PHONE": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_EMAIL": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_COMPANY": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_INDUSTRY": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_TRANSFERED": {
-      "active": true,
-      "displayName": true,
-      "properties": []
-     },
-     "HAS_BROKER": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_REALTOR": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_TRANSFERED_AGG": {
-      "active": true,
-      "displayName": true,
-      "properties": []
-     },
-     "IS_EMPLOYEE_OF": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_CONTROL": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     },
-     "HAS_GUARANTOR": {
-      "active": true,
-      "displayName": false,
-      "properties": []
-     }
+        "HAS_PROFESSION": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_BANKACCOUNT": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_LOAN": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "IS_CONTROLLEDBY": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_PHONE": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_EMAIL": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_COMPANY": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_INDUSTRY": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_TRANSFERED": {
+            "active": true,
+            "displayName": true,
+            "properties": []
+        },
+        "HAS_BROKER": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_REALTOR": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_TRANSFERED_AGG": {
+            "active": true,
+            "displayName": true,
+            "properties": []
+        },
+        "IS_EMPLOYEE_OF": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_CONTROL": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        },
+        "HAS_GUARANTOR": {
+            "active": true,
+            "displayName": false,
+            "properties": []
+        }
     }
-   }
+}
