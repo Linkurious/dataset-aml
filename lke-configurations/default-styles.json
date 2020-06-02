@@ -1,0 +1,132 @@
+{
+    "node": [
+     {
+      "index": 0,
+      "type": "any",
+      "style": {
+       "color": {
+        "type": "auto",
+        "input": [
+         "categories"
+        ]
+       }
+      }
+     },
+     {
+      "index": 1,
+      "itemType": "Person",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 2,
+      "itemType": "Profession",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 3,
+      "itemType": "Company",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 4,
+      "itemType": "Phone",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 5,
+      "itemType": "Email",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 6,
+      "itemType": "MortgageLoan",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 7,
+      "itemType": "BankAccount",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 8,
+      "itemType": "Industry",
+      "type": "any",
+      "style": {
+       "icon": {
+        "font": "FontAwesome",
+        "content": ""
+       }
+      }
+     },
+     {
+      "index": 16,
+      "itemType": "BankAccount",
+      "type": "is",
+      "input": [
+       "properties",
+       "contract_id"
+      ],
+      "value": "00000-00-0000000",
+      "style": {
+       "size": "200%",
+       "color": "#ff7f0e"
+      }
+     },
+     {
+      "index": 17,
+      "itemType": "Company",
+      "type": "is",
+      "input": [
+       "properties",
+       "reg_number"
+      ],
+      "value": "00-0000000",
+      "style": {
+       "size": "200%"
+      }
+     }
+    ],
+    "edge": []
+   }
