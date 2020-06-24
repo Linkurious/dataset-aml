@@ -46,24 +46,24 @@ Brief introduction here.
 
 ## 2. Adding the datasource in Linkurious Enterprise
 
-1. Open Linkurious Enterpise with an user having admin access.
+1. Login to Linkurious Enterpise with an user having admin access.
 
 2. Go to `Admin` -> `Data-sources management` panel and click on `ADD A DATA SOURCE`.
 
 3. Fill these fields with the following values:
-> GRAPH SERVER
-> - **Name**: AML
-> - **Vendor**(Graph Server section): Neo4j
-> - **URL**: *\<url:port>* (a stable idenfier for your Neo4j server)
-> - **Username**: *\<yourUsername\>* (your Neo4j read/write user)
-> - **Password**: *\<yourPassword\>* (your Neo4j read/write password)
+    - GRAPH SERVER
+        - **Name**: AML
+        - **Vendor**(Graph Server section): Neo4j
+        - **URL**: *\<url:port>* (a stable idenfier for your Neo4j server)
+        - **Username**: *\<yourUsername\>* (your Neo4j read/write user)
+        - **Password**: *\<yourPassword\>* (your Neo4j read/write password)
 
->Other
-> - **Alternative node ID**: uid
-> - **Alternative edge ID**: uid
+    - Other
+        - **Alternative node ID**: uid
+        - **Alternative edge ID**: uid
 
->SEARCH INDEX SERVER
-> - **Vendor**: Neo4j Search
+    - SEARCH INDEX SERVER
+        - **Vendor**: Neo4j Search
 
 4. Click on `SAVE CONFIGURATION`.
 
@@ -98,28 +98,102 @@ All the *Standard Queries* and *Query Templates* are contained in the file `lke-
 \
 Repeat this procedure for every query in the file:
 
-1. Open the query editor panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates)).
+1. Open the *query editor* panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates)).
 
 2. Copy the query from the file and paste it in the `Write a query or a template` field.
 
 3. Click on `Save`.
 
-4. Fill the `Name` and `Description` field with the values provided in the file
+4. Fill the `Name` and `Description` fields with the values provided in the file.
+
+5. Click on `Save` again.
 
 > Example:\
-> This is how the first query should look like \
+> This is how the query should look like \
 > \
 > ![](assets/img/IMG_03.png)\
 > \
 > NOTE: `Query ID` may be different in your case.
 
-5. Done!
+6. Done!
 
 ## 6. Setting alerts
-Instructions here
+
+All the *Alerts* are contained in the file `lke-configurations/alerts.cypher`.\
+\
+Repeat this procedure for every alert in the file:
+
+1. On the *Alert dashboard*, click `CREATE NEW ALERT` (more informations [here](https://doc.linkurio.us/user-manual/latest/alert-dashboard/)).
+
+2. Copy the query from the file and paste it in the `Query` field
+
+4. Click on `ADD A COLUMN` and fill the fields with the values provided in the file. \
+*NOTE: repeat this step if more columns are specified in the file.* \
+\
+![](assets/img/IMG_04.png)
+
+3. Click on `NEXT`.
+
+5. Fill the `Alert name` field with the value provided in the file and turn on, if it's not, the `Enable` toggle.\
+\
+![](assets/img/IMG_05.png)
+
+6. Click on `Save`
+
+7. Done!
+
 
 ## 7. Setting custom actions
-Instructions here
 
-## 8. Setting the plugin
-Instructions here
+All the *Custom actions* are contained in the file `lke-configurations/custom-actions.txt`.\
+\
+Repeat this procedure for every custom action in the file:
+
+1. Open the *Custom action* panel (more informations [here](https://doc.linkurio.us/user-manual/2.9.1/custom-actions/#managing-custom-actions)).
+
+2. Click on `NEW CUSTOM ACTION`.
+
+3. Click on `Save`.
+
+4. Fill the `Custom action name`, `URL template` and `Description` fields with the values provided in the file.
+
+5. Replace *\<xxx\>* with the *id* of the query indicated in the file.
+
+6. Click on `SAVE`
+
+> Example:\
+> This is how the custom action should look like \
+> \
+> ![](assets/img/IMG_06.png)\
+> \
+> NOTE: `queryID` value may be different in your case.
+
+7. Done!
+
+> ## How to retrieve the ID of a query ##
+> 1. Open the *QUERIES* panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates))
+> 2. Identify the desired query
+> 3. Click `More` and then on `View details...`
+> 4. The `queryID` is now displayed \
+> ![](assets/img/IMG_07.png)
+
+## 8. Setting up the plugin
+
+1. Download the `data-table` plugin available [here](https://github.com/Linkurious/lke-plugin-data-table).
+
+2. Copy the `.lke` archive in the folder `<lke-server>/data/plugins`
+
+3. On Linkurious Enterprise dashboard, go to `Admin` -> `Global configuration`.
+
+4. Scroll to the `Plugin settins` field.
+
+5. If there are no other plugins configurated here, replace the whole content of the field with the content of the file `lke-configurations/plugins.json` and skip to step 8. \
+Otherwise, go to step 6.
+
+6. Copy the whole content of the file `lke-configurations/plugins.json` **except** for the `{` at the beginning and for the `}` at the end of the file.
+
+7. On the `Plugin settings` field, add an new empty line before the last `}`, add in this line a comma (`,`) and, after the comma, paste the content copied in the step 6. 
+
+8. Click on `Save`
+
+9. Done!

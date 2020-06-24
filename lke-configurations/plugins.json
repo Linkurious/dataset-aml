@@ -1,5 +1,5 @@
 {
-    "table": [
+    "data-table": [
         {
             "basePath": "aml-transactions",
             "entityType": "edge",
