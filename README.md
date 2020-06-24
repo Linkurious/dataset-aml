@@ -185,10 +185,10 @@ Repeat this procedure for every custom action in the file:
 
 4. Scroll to the `Plugin settins` field
 
-5. If there are no other plugins configurated here, replace the whole content of the field with the content of the file `lke-configurations/plugins.json` and skip to step 8. \
+5. If there are no other plugins configurated here, replace the whole content of the field with the content of the `lke-configurations/plugins.json` file and skip to step 8. \
 Otherwise, go to step 6
 
-6. Copy the whole content of the file `lke-configurations/plugins.json` **except** for the `{` at the beginning and for the `}` at the end of the file
+6. Copy the whole content of the `lke-configurations/plugins.json` file **except** for the `{` at the beginning and for the `}` at the end of the file
 
 7. On the `Plugin settings` field, add an new empty line before the last `}`, add in this line a comma (`,`) and, after the comma, paste the content copied in the step 6
 
