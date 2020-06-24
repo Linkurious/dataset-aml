@@ -175,7 +175,7 @@ Repeat this procedure for every custom action in the file:
 > 4. The `queryID` is now displayed \
 > ![](assets/img/IMG_07.png)
 
-## 8. Setting up the plugin
+## 8. Setting the plugin
 
 1. Download the `data-table` plugin available [here](https://github.com/Linkurious/lke-plugin-data-table).
 
