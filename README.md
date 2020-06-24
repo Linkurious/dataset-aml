@@ -3,7 +3,7 @@ Brief introduction here.
 
 ### Prerequisites:
 - a  Neo4j 3.5.x server with read/write access
-- APOC procedures are enabled in Neo4j (link goes here)
+- APOC procedures are enabled in Neo4j (more informations [here](https://neo4j.com/docs/labs/apoc/current/introduction/#installation))
 - a  Linkurious Enterprise 2.9.x server with admin access
 
 ## Topics:
@@ -30,7 +30,7 @@ Brief introduction here.
 
 2. Enable, if it's not, the `Enable multi statement query editor` option (you can find it in the `Browser settings` panel).\
 \
-![](assets/img/IMG_01_small.png)
+![](assets/img/IMG_01.png)
 
 3. Copy the whole content of the `scripts/import.cypher` file and paste it in the Neo4j query field.
 
@@ -48,7 +48,7 @@ Brief introduction here.
 
 1. Open Linkurious Enterpise with an user having admin access.
 
-2. Go to `Admin` -> `Data source management` and click on `ADD A DATA SOURCE`.
+2. Go to `Admin` -> `Data-sources management` panel and click on `ADD A DATA SOURCE`.
 
 3. Fill these fields with the following values:
 > GRAPH SERVER
@@ -72,13 +72,48 @@ Brief introduction here.
 6. Done!
 
 ## 3. Setting default styles
-Instructions here
+
+1. Go to `Admin` -> `Data-source settings` panel
+
+2. Scroll to the `Default styles` field and replace the whole content with the content of the `lke-configurations/default-styles.json` file.
+
+3. Click on `Save`
+
+4. Done!
+
 
 ## 4. Setting default captions
-Instructions here
+
+1. Go to `Admin` -> `Data-source settings` panel
+
+2. Scroll to the `Default captions` field and replace the whole content with the content of the `lke-configurations/default-captions.json` file.
+
+3. Click on `Save`
+
+4. Done!
 
 ## 5. Setting queries
-Instructions here
+
+All the *Standard Queries* and *Query Templates8 are contained in the file `lke-configurations/queries.cypher`.\
+\
+Repeat this procedure for every query in the file:
+
+1. Open the query editor panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates)).
+
+2. Copy the query from the file and paste it in the `Write a query or a template` field.
+
+3. Click on `Save`.
+
+4. Fill the `Name` and `Description` field with the values provided in the file
+
+5. Done!
+
+Example:\
+This is how the first query should look like \
+\
+![](assets/img/IMG_03.png)\
+\
+NOTE: `Query ID` may be different in your case.
 
 ## 6. Setting alerts
 Instructions here
