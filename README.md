@@ -8,7 +8,7 @@ Brief introduction here.
 
 ## Topics:
 
-1. [Importing the data in Neo4j](#importing-the-data-in-neoj)
+1. [Importing the data in Neo4j](#1-importing-the-data-in-neoj)
 
 2. Adding the datasource in Linkurious Enterprise
 
