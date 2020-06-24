@@ -106,14 +106,14 @@ Repeat this procedure for every query in the file:
 
 4. Fill the `Name` and `Description` field with the values provided in the file
 
-5. Done!
+> Example:\
+> This is how the first query should look like \
+> \
+> ![](assets/img/IMG_03.png)\
+> \
+> NOTE: `Query ID` may be different in your case.
 
-Example:\
-This is how the first query should look like \
-\
-![](assets/img/IMG_03.png)\
-\
-NOTE: `Query ID` may be different in your case.
+5. Done!
 
 ## 6. Setting alerts
 Instructions here
