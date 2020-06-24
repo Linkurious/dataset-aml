@@ -94,7 +94,7 @@ Brief introduction here.
 
 ## 5. Setting queries
 
-All the *Standard Queries* and *Query Templates8 are contained in the file `lke-configurations/queries.cypher`.\
+All the *Standard Queries* and *Query Templates* are contained in the file `lke-configurations/queries.cypher`.\
 \
 Repeat this procedure for every query in the file:
 
