@@ -28,7 +28,7 @@ Brief introduction here.
 
 1. Login to Neo4j Browser with an user having read/write access
 
-2. Enable, if it's not, the `Enable multi statement query editor` option (you can find it in the `Browser settings` panel) \
+2. On the `Broser settings` panel, enable, if it's not, the `Enable multi statement query editor` option \
 \
 ![](assets/img/IMG_01.png)
 
