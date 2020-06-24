@@ -36,7 +36,7 @@ Brief introduction here.
 
 4. Run the query and wait.
 
-5. *(Optional)* If you want to check the import results, just run `:sysinfo` as a query and confront the number of nodes/edges with the following table:\
+5. *(Optional)* If you want to check the import results, run `:sysinfo` as a query and compare the number of nodes/edges in your database with the following table:\
 \
 ![](assets/img/IMG_02.png)
 
