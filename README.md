@@ -153,13 +153,11 @@ Repeat this procedure for every custom action in the file:
 
 2. Click on `NEW CUSTOM ACTION`
 
-3. Click on `Save`
+3. Fill the `Custom action name`, `URL template` and `Description` fields with the values provided in the file
 
-4. Fill the `Custom action name`, `URL template` and `Description` fields with the values provided in the file
+4. Replace *\<xxx\>* with the *id* of the query indicated in the file
 
-5. Replace *\<xxx\>* with the *id* of the query indicated in the file
-
-6. Click on `SAVE`
+5. Click on `SAVE`
 
 > Example:\
 > This is how the custom action should look like \
