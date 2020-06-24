@@ -53,7 +53,7 @@ Brief introduction here.
 3. Fill these fields with the following values:
     - GRAPH SERVER
         - **Name**: AML
-        - **Vendor**(Graph Server section): Neo4j
+        - **Vendor**: Neo4j
         - **URL**: *\<url:port>* (a stable idenfier for your Neo4j server)
         - **Username**: *\<yourUsername\>* (your Neo4j read/write user)
         - **Password**: *\<yourPassword\>* (your Neo4j read/write password)
