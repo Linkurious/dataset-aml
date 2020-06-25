@@ -94,7 +94,7 @@ Brief introduction here.
 
 ## 5. Setting queries
 
-All the *Standard Queries* and *Query Templates* are contained in the file `lke-configurations/queries.cypher` \
+All the *Standard Queries* and *Query Templates* are contained in the `lke-configurations/queries.cypher` file \
 \
 Repeat this procedure for every query in the file:
 
@@ -119,7 +119,7 @@ Repeat this procedure for every query in the file:
 
 ## 6. Setting alerts
 
-All the *Alerts* are contained in the file `lke-configurations/alerts.cypher`\
+All the *Alerts* are contained in the `lke-configurations/alerts.cypher` file \
 \
 Repeat this procedure for every alert in the file:
 
@@ -145,7 +145,7 @@ Repeat this procedure for every alert in the file:
 
 ## 7. Setting custom actions
 
-All the *Custom actions* are contained in the file `lke-configurations/custom-actions.txt`\
+All the *Custom actions* are contained in the `lke-configurations/custom-actions.txt` file \
 \
 Repeat this procedure for every custom action in the file:
 
@@ -171,7 +171,7 @@ Repeat this procedure for every custom action in the file:
 > ## How to retrieve the ID of a query ##
 > 1. Open the *QUERIES* panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates))
 > 2. Identify the desired query
-> 3. Click `More` and then on `View details...`
+> 3. Click on `More` and then on `View details...`
 > 4. The `queryID` is now displayed \
 > ![](assets/img/IMG_07.png)
 
