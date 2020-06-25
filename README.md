@@ -155,7 +155,7 @@ Repeat this procedure for every custom action in the file:
 
 3. Fill the `Custom action name`, `URL template` and `Description` fields with the values provided in the file
 
-4. Replace *\<xxx\>* with the *id* of the query indicated in the file
+4. Replace *\<xxx\>* with the *id* of the query indicated in the file (read [how to retrieve the ID of a query](#how-to-retrieve-the-id-of-a-query))
 
 5. Click on `SAVE`
 
