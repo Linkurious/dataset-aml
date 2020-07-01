@@ -30,7 +30,7 @@ Brief introduction here.
 
 2. On the `Browser settings` panel, enable, if it's not, the `Enable multi statement query editor` option \
 \
-![](assets/img/IMG_01.png)
+![Neo4j Browser](assets/img/IMG_01.png)
 
 3. Copy the whole content of the `scripts/import.cypher` file and paste it in the Neo4j query field
 
@@ -38,7 +38,7 @@ Brief introduction here.
 
 5. *(Optional)* If you want to check the import results, run `:sysinfo` as a query and compare the number of nodes/edges in your database with the following table:\
 \
-![](assets/img/IMG_02.png)
+![ID Allocation](assets/img/IMG_02.png)
 
 6. Done!
 
@@ -111,7 +111,7 @@ Repeat this procedure for every query in the file:
 > Example:\
 > This is how the query should look like \
 > \
-> ![](assets/img/IMG_03.png)\
+> ![Query Details](assets/img/IMG_03.png)\
 > \
 > NOTE: `Query ID` may be different in your case
 
@@ -130,13 +130,13 @@ Repeat this procedure for every alert in the file:
 4. Click on `ADD A COLUMN` and fill the fields with the values provided in the file \
 *NOTE: repeat this step if more columns are specified in the file* \
 \
-![](assets/img/IMG_04.png)
+![Alert configuration](assets/img/IMG_04.png)
 
 3. Click on `NEXT`
 
 5. Fill the `Alert name` field with the value provided in the file and turn on, if it's not, the `Enable` toggle \
 \
-![](assets/img/IMG_05.png)
+![Alert settings](assets/img/IMG_05.png)
 
 6. Click on `Save`
 
@@ -162,7 +162,7 @@ Repeat this procedure for every custom action in the file:
 > Example:\
 > This is how the custom action should look like \
 > \
-> ![](assets/img/IMG_06.png)\
+> ![Custom Action Details](assets/img/IMG_06.png)\
 > \
 > NOTE: `queryID` value may be different in your case
 
@@ -173,7 +173,7 @@ Repeat this procedure for every custom action in the file:
 > 2. Identify the desired query
 > 3. Click on `More` and then on `View details...`
 > 4. The `queryID` is now displayed \
-> ![](assets/img/IMG_07.png)
+> ![Query Detailss](assets/img/IMG_07.png)
 
 ## 8. Setting the plugin
 
