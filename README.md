@@ -3,8 +3,8 @@ Brief introduction here.
 
 ### Prerequisites:
 - a  Neo4j 3.5.x server with read/write access
-- APOC procedures are enabled in Neo4j (more informations [here](https://neo4j.com/docs/labs/apoc/current/introduction/#installation))
-- a  Linkurious Enterprise 2.9.x server with admin access
+- APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/docs/labs/apoc/current/introduction/#installation))
+- a  Linkurious Enterprise 2.9.x server with admin access ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
 ## Topics:
 
@@ -28,7 +28,7 @@ Brief introduction here.
 
 1. Login to Neo4j Browser with an user having read/write access
 
-2. On the `Broser settings` panel, enable, if it's not, the `Enable multi statement query editor` option \
+2. On the `Browser settings` panel, enable, if it's not, the `Enable multi statement query editor` option \
 \
 ![](assets/img/IMG_01.png)
 
@@ -98,7 +98,7 @@ All the *Standard Queries* and *Query Templates* are contained in the `lke-confi
 \
 Repeat this procedure for every query in the file:
 
-1. Open the *query editor* panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates))
+1. Open the *query editor* panel (more information [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates))
 
 2. Copy the query from the file and paste it in the `Write a query or a template` field
 
@@ -123,7 +123,7 @@ All the *Alerts* are contained in the `lke-configurations/alerts.cypher` file \
 \
 Repeat this procedure for every alert in the file:
 
-1. On the *Alert dashboard*, click `CREATE NEW ALERT` (more informations [here](https://doc.linkurio.us/user-manual/latest/alert-dashboard/)).
+1. On the *Alert dashboard*, click `CREATE NEW ALERT` (more information [here](https://doc.linkurio.us/user-manual/latest/alert-dashboard/)).
 
 2. Copy the query from the file and paste it in the `Query` field
 
@@ -149,7 +149,7 @@ All the *Custom actions* are contained in the `lke-configurations/custom-actions
 \
 Repeat this procedure for every custom action in the file:
 
-1. Open the *Custom action* panel (more informations [here](https://doc.linkurio.us/user-manual/2.9.1/custom-actions/#managing-custom-actions))
+1. Open the *Custom action* panel (more information [here](https://doc.linkurio.us/user-manual/2.9.1/custom-actions/#managing-custom-actions))
 
 2. Click on `NEW CUSTOM ACTION`
 
@@ -169,7 +169,7 @@ Repeat this procedure for every custom action in the file:
 7. Done!
 
 > ## How to retrieve the ID of a query ##
-> 1. Open the *QUERIES* panel (more informations [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates))
+> 1. Open the *QUERIES* panel (more information [here](https://doc.linkurio.us/user-manual/latest/query-templates/#managing-queries-and-templates))
 > 2. Identify the desired query
 > 3. Click on `More` and then on `View details...`
 > 4. The `queryID` is now displayed \
@@ -183,9 +183,9 @@ Repeat this procedure for every custom action in the file:
 
 3. On Linkurious Enterprise dashboard, go to `Admin` -> `Global configuration`
 
-4. Scroll to the `Plugin settins` field
+4. Scroll to the `Plugin settings` field
 
-5. If there are no other plugins configurated here, replace the whole content of the field with the content of the `lke-configurations/plugins.json` file and skip to step 8. \
+5. If there are no other plugins configured here, replace the whole content of the field with the content of the `lke-configurations/plugins.json` file and skip to step 8. \
 Otherwise, go to step 6
 
 6. Copy the whole content of the `lke-configurations/plugins.json` file **except** for the `{` at the beginning and for the `}` at the end of the file
