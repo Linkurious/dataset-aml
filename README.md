@@ -173,7 +173,7 @@ Repeat this procedure for every custom action in the file:
 > 2. Identify the desired query
 > 3. Click on `More` and then on `View details...`
 > 4. The `queryID` is now displayed \
-> ![Query Detailss](assets/img/IMG_07.png)
+> ![Query Details](assets/img/IMG_07.png)
 
 ## 8. Setting the plugin
 
