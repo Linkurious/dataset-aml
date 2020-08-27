@@ -17,7 +17,7 @@ RETURN m, p, b, r, hl, hb, hr,  coalesce(p.full_name, p.name)as name, b.name, r.
 
 
 // /*
-//  * Name: UNNAMED #2
+//  * Name: Common Clients
 //  * Desc: find group of bank clients (more than 3) involved in Mortgage Loans that share the same Loaners and Brokers
 //  *
 //  * Custom columns:
