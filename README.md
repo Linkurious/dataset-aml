@@ -1,5 +1,4 @@
 # AML Dataset implementation guide
-Brief introduction here.
 
 ### Prerequisites:
 - a  Neo4j 3.5.x server with read/write access
