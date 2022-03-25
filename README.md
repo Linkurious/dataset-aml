@@ -132,20 +132,18 @@ Repeat this procedure for every alert in the file:
 \
 ![Alert settings](assets/img/IMG_05.png)
 
-2. Copy the query from the file and paste it in the `Query` field
+5. Copy the query from the file and paste it in the `Query` field
 
-3. Copy the target value from the file and paste it in the `Target` field
+6. Copy the target value from the file and paste it in the `Target` field
 
-4. Click on `ADD A COLUMN` and fill the fields with the values provided in the file \
+7. Click on `ADD A COLUMN` and fill the fields with the values provided in the file \
 *NOTE: repeat this step if more columns are specified in the file* \
 \
 ![Alert configuration](assets/img/IMG_04.png)
 
-3. Click on `NEXT`
+8. Click on `Save`
 
-6. Click on `Save`
-
-7. Done!
+9. Done!
 
 
 ## 7. Setting custom actions
