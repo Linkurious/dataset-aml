@@ -3,7 +3,7 @@
 ### Prerequisites: 
 - a  Neo4j 4.2 or greater server with `admin` or `architect` access rights
 - APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/docs/labs/apoc/current/introduction/#installation))
-- a Linkurious Enterprise 3.0 or greater with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
+- a Linkurious Enterprise 3.0.4 or higher with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
 ## Topics:
 
@@ -132,18 +132,20 @@ Repeat this procedure for every alert in the file:
 \
 ![Alert settings](assets/img/IMG_05.png)
 
-5. Copy the query from the file and paste it in the `Query` field
+5. Turn on the `Share alert` toggle and select if you want to share it with all the users or with specific groups
 
-6. Copy the target value from the file and paste it in the `Target` field
+6. Copy the query from the file and paste it in the `Query` field
 
-7. Click on `ADD A COLUMN` and fill the fields with the values provided in the file \
+7. Copy the target value from the file and paste it in the `Target` field
+
+8. Click on `ADD A COLUMN` and fill the fields with the values provided in the file \
 *NOTE: repeat this step if more columns are specified in the file* \
 \
 ![Alert configuration](assets/img/IMG_04.png)
 
-8. Click on `Save`
+9. Click on `Save`
 
-9. Done!
+10. Done!
 
 
 ## 7. Setting custom actions
