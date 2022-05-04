@@ -1,6 +1,5 @@
 # AML Dataset implementation guide
 
-
 ### Prerequisites:
 - a  Neo4j 4.2 or higher server with `admin` or `architect` access rights
 - APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/docs/labs/apoc/current/introduction/#installation))
