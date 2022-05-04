@@ -143,7 +143,7 @@ Repeat this procedure for every alert in the file:
 \
 ![Alert configuration](assets/img/IMG_04.png)
 
-9. Click on `Save`
+9. Click on `Save` 
 
 10. Done!
 
