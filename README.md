@@ -2,7 +2,7 @@
 
 ### Prerequisites: 
 - a  Neo4j 4.2 or higher server with `admin` or `architect` access rights
-- APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/docs/labs/apoc/current/introduction/#installation))
+- APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/labs/apoc/))
 - a Linkurious Enterprise 3.0.4 or higher with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
 ## Topics:
@@ -160,7 +160,7 @@ Repeat this procedure for every custom action in the file:
 
 3. Fill the `Custom action name`, `URL template` and `Description` fields with the values provided in the file
 
-4. Replace *\<xxx\>* with the *id* of the query indicated in the file (read [How to retrieve the ID of a query](#how-to-retrieve-the-id-of-a-query) section)
+4. If any, replace *\<xxx\>* with the *id* of the query indicated in the file (read [How to retrieve the ID of a query](#how-to-retrieve-the-id-of-a-query) section)
 
 5. Click on `SAVE`
 

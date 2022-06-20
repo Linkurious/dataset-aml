@@ -13,3 +13,9 @@
 //  * queryId: replace <XXX> with the id of the "Check Real Estate Value" query template
 //  */
 {{baseurl}}plugins/aml-realestate?queryId=<XXX>&sourceKey={{sourcekey}}&param_ids_Real%20Estate={{nodeset:MortgageLoan}}
+
+// /*
+//  * Name: Check Adverse Media on Google
+//  * Desc: Checks whether an individual's full name is related in any way to AML's keywords
+//  */
+https://www.google.com/search?q={{node.first_name}}+{{node.last_name}}+AND+%28"money+laundering"+OR+"scam"+OR+"fraud"+OR+"crime"+OR+"arrest"+OR+"suspect"+OR+"crypto"+OR+"OFAC"%29
