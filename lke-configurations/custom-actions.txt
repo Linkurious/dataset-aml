@@ -19,3 +19,9 @@
 //  * Desc: Checks whether an individual's full name is related in any way to AML's keywords
 //  */
 https://www.google.com/search?q={{node.first_name}}+{{node.last_name}}+AND+%28"money+laundering"+OR+"scam"+OR+"fraud"+OR+"crime"+OR+"arrest"+OR+"suspect"+OR+"crypto"+OR+"OFAC"%29
+
+// /*
+//  * Name: Check open ownership registry
+//  * Desc: Checks what a company owns
+//  */
+https://register.openownership.org/search?utf8=%E2%9C%93&q={{node.name}}

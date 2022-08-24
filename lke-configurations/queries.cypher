@@ -83,3 +83,24 @@ return p;
 match (a) where id(a) = {{"Company":node:"Company"}}
 match p = (a)<-[:HAS_CONTROL*..10]-(b)
 return p;
+
+
+// /*
+//  * Name: Collusion between realtor and broker
+//  * Desc: Show realtors and brokers who have at least 3 clients in common
+//  */
+MATCH (p{is_client:true})-[hl:HAS_LOAN]->(m:MortgageLoan)
+MATCH (r:Company)<-[hr:HAS_REALTOR]-(m)-[hb:HAS_BROKER]->(b:Company)
+WITH r, b, collect(p) + collect(m) as col, collect(hl) + collect(hr) + collect(hb) as rel
+WHERE size(col) > 3
+RETURN r, b, size(col) as len, r.name, b.name,  col, rel
+
+
+// /*
+//  * Name: Return companies at same address
+//  * Desc: Returns companies at same address
+//  */
+MATCH (n) where id(n) = {{"Node":node:"Company"}}
+MATCH (same_address:Company) 
+WHERE same_address.address = n.address 
+RETURN same_address
