@@ -1,7 +1,7 @@
 # AML Dataset implementation guide
 
 ### Prerequisites: 
-- a  Neo4j 4.2 or higher server with `admin` or `architect` access rights
+- a Neo4j v4 server with `admin` or `architect` access rights (minimum supported version: 4.2)
 - APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/labs/apoc/))
 - a Linkurious Enterprise 3.0.4 or higher with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
