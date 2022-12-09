@@ -231,14 +231,15 @@
         loan.loan_amount = toFloat(row.`Initial amount`),
         loan.signature_date = row.`Date of signature`,
         loan.duration = toInteger(row.`Duration`),
-        loan.monthly_instalment = row.`monthly instalment`,
+        loan.monthly_instalment = toFloat(row.`monthly instalment`),
         loan.type = row.`Type`,
         loan.city = row.`City`,
         loan.address = row.`address`,
         loan.longitude = toFloat(row.`Longitude`),
         loan.latitude = toFloat(row.`Latitude`),
         loan.purchase_price = toFloat(row.`Purchase price`),
-        loan.sqft = toInteger(row.`Superficy feet`)
+        loan.sqft = toInteger(row.`Superficy feet`),
+        loan.nationality = row.`Nationality`
     
     merge (client:Person { uid: apoc.util.md5([row.`Owner id`]) }) set client:Client, client.`is_client` = true
     merge (client)-[:HAS_LOAN { uid: apoc.util.md5([client.uid, loan.uid]) }]->(loan)
