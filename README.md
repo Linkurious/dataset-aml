@@ -6,14 +6,18 @@
 - a Linkurious Enterprise 3.0.4 or higher with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
 ## Topics:
-1. [Importing the data in Neo4j](#1-importing-the-data-in-neo4j)
-2. [Adding the datasource in Linkurious Enterprise](#2-adding-the-datasource-in-linkurious-enterprise)
-3. [Setting default styles](#3-setting-default-styles)
-4. [Setting default captions](#4-setting-default-captions)
-5. [Setting queries](#5-setting-queries)
-6. [Setting alerts](#6-setting-alerts)
-7. [Setting custom actions](#7-setting-custom-actions)
-8. [Setting the plugin](#8-setting-the-plugin)
+- [AML Dataset implementation guide](#aml-dataset-implementation-guide)
+    - [Prerequisites:](#prerequisites)
+  - [Topics:](#topics)
+  - [1. Importing the data in Neo4j](#1-importing-the-data-in-neo4j)
+  - [2. Adding the datasource in Linkurious Enterprise](#2-adding-the-datasource-in-linkurious-enterprise)
+  - [3. Setting default styles](#3-setting-default-styles)
+  - [4. Setting default captions](#4-setting-default-captions)
+  - [5. Setting queries](#5-setting-queries)
+  - [6. Setting alerts](#6-setting-alerts)
+  - [7. Setting custom actions](#7-setting-custom-actions)
+    - [How to retrieve the ID of a query](#how-to-retrieve-the-id-of-a-query)
+  - [8. Setting the plugin](#8-setting-the-plugin)
 
 ## 1. Importing the data in Neo4j
 1. Login to Neo4j Browser with an user having read/write access
@@ -125,7 +129,7 @@ Repeat this procedure for every custom action in the file:
    ![Query Details](assets/img/IMG_07.png)
 
 ## 8. Setting the plugin
-1. Download the `data-table` plugin available [here](https://github.com/Linkurious/lke-plugin-data-table).
+1. Download the data-table plugin available [here](https://github.com/Linkurious/lke-plugin-data-table/releases/latest) (documentation available [here](https://github.com/Linkurious/lke-plugin-data-table#readme)).
 2. Copy the `.lke` archive in the folder `<lke-server>/data/plugins`
 3. On Linkurious Enterprise dashboard, go to `Admin` -> `Global configuration`
 4. Scroll to the `Plugin settings` field
@@ -136,4 +140,21 @@ Repeat this procedure for every custom action in the file:
 6. Copy the whole content of the `lke-configurations/plugins.json` file **except** for the `{` at the beginning and for the `}` at the end of the file
 7. On the `Plugin settings` field, add an new empty line before the last `}`, add in this line a comma (`,`) and, after the comma, paste the content copied in the step 6
 8. Click on `Save`
-9. Done!
+9. On Linkurious Enterprise dashboard, go to `Admin` -> `Data-source Schema`
+10. Scroll to the end of `NODES CATEGORIES & EDGES TYPES` list and click on `Create new categories`
+![](/assets/img/IMG_08.png)
+11. Type `REALESTATE_TRANSACTION` and click on `SAVE`
+12. Select the category you just created and, by clicking on `Create a new property`, create properties as following:
+    | Name             | Type   | Parameter                                    |
+    |------------------|--------|----------------------------------------------|
+    | address          | string |                                              |
+    | avg_sqft_price   | number |                                              |
+    | city             | string |                                              |
+    | contract_id      | string |                                              |
+    | price_range      | enum   | values: `OVERPRICED`, `UNDERPRICED`, `NORMAL`|
+    | purchase_price   | number |                                              |
+    | sqft             | number |                                              |
+    | sqft_price       | number |                                              |
+    | transaction_date | date   | format: `yyy-mm-dd`                          |
+    | type             | string |                                              |
+13. Done!
