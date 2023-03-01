@@ -40,7 +40,6 @@
     return internal_bank, industry, internal_account;
 
 // Person
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - Person.csv', ' ', '%20') as row
     with row
 
@@ -58,7 +57,7 @@
     
     with row, client
 
-    call apoc.do.when(exists(row.`Employer Reg number`), '
+    call apoc.do.when(row.`Employer Reg number` IS NOT NULL, '
         merge (company:Company { uid: apoc.util.md5([row.`Employer Reg number`]) })
         set
             company.reg_number = row.`Employer Reg number`,
@@ -70,7 +69,7 @@
     ', 'return row, null as company', { row: row, client: client }) yield value
     with row, client, value.company as company
 
-    // call apoc.do.when(exists(row.`Profession`), '
+    // call apoc.do.when(row.`Profession` IS NOT NULL, '
     //     merge (profession:Profession { uid: apoc.util.md5([row.`Profession`]) })
     //     set profession.name = row.`Profession`
 
@@ -80,7 +79,7 @@
     // ', 'return row, null as profession', { row: row, client: client }) yield value
     with row, client, company, null as profession
     
-    call apoc.do.when(exists(row.`email`), '
+    call apoc.do.when(row.`email` IS NOT NULL, '
         merge (email:Email { uid: apoc.util.md5([row.`email`]) })
         set email.email = row.`email`
 
@@ -90,7 +89,7 @@
     ', 'return row, null as email', { row: row, client: client }) yield value
     with row, client, company, profession, value.email as email
 
-    call apoc.do.when(exists(row.`phone`), '
+    call apoc.do.when(row.`phone` IS NOT NULL, '
         merge (phone:Phone { uid: apoc.util.md5([row.`phone`]) })
         set phone.number = row.`phone`
 
@@ -104,7 +103,6 @@
     
 
 // Company
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - Company.csv', ' ', '%20') as row
     with row
 
@@ -120,7 +118,7 @@
     
     with row, company
     
-    // call apoc.do.when(exists(row.`Industry`), '
+    // call apoc.do.when(row.`Industry` IS NOT NULL, '
     //     merge (industry:Industry { uid: apoc.util.md5([row.`Industry`]) })
     //     set industry.name = row.`Industry`
         
@@ -130,7 +128,7 @@
     // ', 'return row, null as industry', { row: row, company: company }) yield value
     with row, company, null as industry
 
-    call apoc.do.when(exists(row.`Ultimate Beneficiary id`), '
+    call apoc.do.when(row.`Ultimate Beneficiary id` IS NOT NULL, '
         merge (ubo:Person { uid: apoc.util.md5([row.`Ultimate Beneficiary id`]) })
         
         merge (ubo)-[:HAS_CONTROL { uid: apoc.util.md5([ubo.uid, company.uid])}]->(company)
@@ -143,7 +141,6 @@
 
 
 // Company: Broker
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - Company_Broker.csv', ' ', '%20') as row
     with row
 
@@ -159,7 +156,7 @@
     
     with row, company
     
-    // call apoc.do.when(exists(row.`Industry`), '
+    // call apoc.do.when(row.`Industry` IS NOT NULL, '
     //     merge (industry:Industry { uid: apoc.util.md5([row.`Industry`]) })
     //     set industry.name = row.`Industry`
         
@@ -173,7 +170,6 @@
 
 
 // Company: Realtor
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - Company_Realtor.csv', ' ', '%20') as row
     with row
 
@@ -189,7 +185,7 @@
     
     with row, company
     
-    // call apoc.do.when(exists(row.`Industry`), '
+    // call apoc.do.when(row.`Industry` IS NOT NULL, '
     //     merge (industry:Industry { uid: apoc.util.md5([row.`Industry`]) })
     //     set industry.name = row.`Industry`
         
@@ -203,7 +199,6 @@
 
 
 // Real Estate Value sheet
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - US_RealEstate_value.csv', ' ', '%20') as row
     with row
     
@@ -221,7 +216,6 @@
 
 
 // Mortgage Loan: Person
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - MortgageLoans_Person.csv', ' ', '%20') as row
     with row
 
@@ -246,7 +240,7 @@
     
     with row, loan, client
     
-    call apoc.do.when(exists(row.`Guarantor id`), '
+    call apoc.do.when(row.`Guarantor id` IS NOT NULL, '
         merge (guarantor:Person { uid: apoc.util.md5([row.`Guarantor id`]) }) set guarantor:Guarantor, guarantor.`is_guarantor` = true
         merge (loan)-[:HAS_GUARANTOR { uid: apoc.util.md5([loan.uid, guarantor.uid]) }]->(guarantor)
         
@@ -254,7 +248,7 @@
     ', 'return row, null as guarantor', { row: row, loan: loan }) yield value
     with row, loan, client, value.guarantor as guarantor
 
-    call apoc.do.when(exists(row.`Realtor reg`), '
+    call apoc.do.when(row.`Realtor reg` IS NOT NULL, '
         merge (realtor:Company { uid: apoc.util.md5([row.`Realtor reg`]) }) set realtor:Realtor, realtor.`is_realtor` = true
         merge (loan)-[:HAS_REALTOR { uid: apoc.util.md5([loan.uid, realtor.uid]) }]->(realtor)
         
@@ -262,7 +256,7 @@
     ', 'return row, null as realtor', { row: row, loan: loan }) yield value
     with row, loan, client, guarantor, value.realtor as realtor
     
-    call apoc.do.when(exists(row.`Broker reg`), '
+    call apoc.do.when(row.`Broker reg` IS NOT NULL, '
         merge (broker:Company { uid: apoc.util.md5([row.`Broker reg`]) }) set broker:Broker, broker.`is_broker` = true
         merge (loan)-[:HAS_BROKER { uid: apoc.util.md5([loan.uid, broker.uid]) }]->(broker)
         
@@ -274,7 +268,6 @@
 
 
 // Mortgage Loan: Company
-    :auto using periodic commit 500
     load csv with headers from replace('https://raw.githubusercontent.com/Linkurious/dataset-aml/master/csv/Dataset AML Demo - MortgageLoans_Company.csv', ' ', '%20') as row
     with row
 
@@ -298,7 +291,7 @@
 
     with row, loan, client
     
-    call apoc.do.when(exists(row.`Realtor reg`), '
+    call apoc.do.when(row.`Realtor reg` IS NOT NULL, '
         merge (realtor:Company { uid: apoc.util.md5([row.`Realtor reg`]) }) set realtor:Realtor, realtor.`is_realtor` = true
         merge (loan)-[:HAS_REALTOR { uid: apoc.util.md5([loan.uid, realtor.uid]) }]->(realtor)
         
@@ -306,7 +299,7 @@
     ', 'return row, null as realtor', { row: row, loan: loan }) yield value
     with row, loan, client, value.realtor as realtor
 
-    call apoc.do.when(exists(row.`Broker reg`), '
+    call apoc.do.when(row.`Broker reg` IS NOT NULL, '
         merge (broker:Company { uid: apoc.util.md5([row.`Broker reg`]) }) set broker:Broker, broker.`is_broker` = true
         merge (loan)-[:HAS_BROKER { uid: apoc.util.md5([loan.uid, broker.uid]) }]->(broker)
         
@@ -323,11 +316,11 @@
     match (n:Realtor) remove n:Realtor;
     match (n:Broker) remove n:Broker;
 // Schema Filling
-    match (n:Person)  where not exists(n.is_client) set n.is_client = false;
-    match (n:Person)  where not exists(n.is_guarantor) set n.is_guarantor = false;
-    match (n:Company) where not exists(n.is_client) set n.is_client = false;
-    match (n:Company) where not exists(n.is_broker) set n.is_broker = false;
-    match (n:Company) where not exists(n.is_realtor) set n.is_realtor = false;
+    match (n:Person)  where n.is_client IS NULL set n.is_client = false;
+    match (n:Person)  where n.is_guarantor IS NULL set n.is_guarantor = false;
+    match (n:Company) where n.is_client IS NULL set n.is_client = false;
+    match (n:Company) where n.is_broker IS NULL set n.is_broker = false;
+    match (n:Company) where n.is_realtor IS NULL set n.is_realtor = false;
 
 
 // Create Bank accounts / Transactions
