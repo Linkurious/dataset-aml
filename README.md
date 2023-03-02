@@ -146,9 +146,9 @@ Repeat this procedure for every custom action in the file:
     ![](/assets/img/IMG_08.png)
 11. Type `REALESTATE_TRANSACTION` and click on `SAVE`
 12. Select the category you just created and, by clicking on `Create a new property`, create properties as following:
-    | Name             | Type     | Parameter                                    |
-    |------------------|----------|----------------------------------------------|
-    | address          | string   |                                              |
+    | Name             | Type     | Parameter                                     |
+    |------------------|----------|-----------------------------------------------|
+    | address          | string   |                                               |
     | avg_sqft_price   | currency | symbol: `$`; format: `#.###,## [Symbol]`      |
     | city             | string   |                                               |
     | contract_id      | string   |                                               |
@@ -156,6 +156,6 @@ Repeat this procedure for every custom action in the file:
     | purchase_price   | number   |                                               |
     | sqft             | number   |                                               |
     | sqft_price       | currency | symbol: `$`; format: `#.###,## [Symbol]`      |
-    | transaction_date | date     | format: `yyyy-mm-dd`                           |
+    | transaction_date | date     | format: `yyyy-mm-dd`                          |
     | type             | string   |                                               |
 13. Done!
