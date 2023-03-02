@@ -149,13 +149,13 @@ Repeat this procedure for every custom action in the file:
     | Name             | Type     | Parameter                                    |
     |------------------|----------|----------------------------------------------|
     | address          | string   |                                              |
-    | avg_sqft_price   | currency | symbol: `$`, format: `#.###,## [Symbol]`      |
+    | avg_sqft_price   | currency | symbol: `$`; format: `#.###,## [Symbol]`      |
     | city             | string   |                                               |
     | contract_id      | string   |                                               |
     | price_range      | enum     | values: `OVERPRICED`, `UNDERPRICED`, `NORMAL` |
     | purchase_price   | number   |                                               |
     | sqft             | number   |                                               |
-    | sqft_price       | currency | symbol: `$`, format: `#.###,## [Symbol]`      |
-    | transaction_date | date     | format: `yyy-mm-dd`                           |
+    | sqft_price       | currency | symbol: `$`; format: `#.###,## [Symbol]`      |
+    | transaction_date | date     | format: `yyyy-mm-dd`                           |
     | type             | string   |                                               |
 13. Done!
