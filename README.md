@@ -1,23 +1,24 @@
+<!-- omit in toc -->
 # AML Dataset implementation guide
 
+<!-- omit in toc -->
 ### Prerequisites: 
 - a Neo4j v4 server with `admin` or `architect` access rights (minimum supported version: v4.2)
 - APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/labs/apoc/))
 - a Linkurious Enterprise 3.0.4 or higher with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
+<!-- auto generated with https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one -->
+<!-- omit in toc -->
 ## Topics:
-- [AML Dataset implementation guide](#aml-dataset-implementation-guide)
-    - [Prerequisites:](#prerequisites)
-  - [Topics:](#topics)
-  - [1. Importing the data in Neo4j](#1-importing-the-data-in-neo4j)
-  - [2. Adding the datasource in Linkurious Enterprise](#2-adding-the-datasource-in-linkurious-enterprise)
-  - [3. Setting default styles](#3-setting-default-styles)
-  - [4. Setting default captions](#4-setting-default-captions)
-  - [5. Setting queries](#5-setting-queries)
-  - [6. Setting alerts](#6-setting-alerts)
-  - [7. Setting custom actions](#7-setting-custom-actions)
-    - [How to retrieve the ID of a query](#how-to-retrieve-the-id-of-a-query)
-  - [8. Setting the plugin](#8-setting-the-plugin)
+- [1. Importing the data in Neo4j](#1-importing-the-data-in-neo4j)
+- [2. Adding the datasource in Linkurious Enterprise](#2-adding-the-datasource-in-linkurious-enterprise)
+- [3. Setting default styles](#3-setting-default-styles)
+- [4. Setting default captions](#4-setting-default-captions)
+- [5. Setting queries](#5-setting-queries)
+- [6. Setting alerts](#6-setting-alerts)
+- [7. Setting custom actions](#7-setting-custom-actions)
+  - [How to retrieve the ID of a query](#how-to-retrieve-the-id-of-a-query)
+- [8. Setting the plugin](#8-setting-the-plugin)
 
 ## 1. Importing the data in Neo4j
 1. Login to Neo4j Browser with an user having read/write access
@@ -142,19 +143,19 @@ Repeat this procedure for every custom action in the file:
 8. Click on `Save`
 9. On Linkurious Enterprise dashboard, go to `Admin` -> `Data-source Schema`
 10. Scroll to the end of `NODES CATEGORIES & EDGES TYPES` list and click on `Create new categories`
-![](/assets/img/IMG_08.png)
+    ![](/assets/img/IMG_08.png)
 11. Type `REALESTATE_TRANSACTION` and click on `SAVE`
 12. Select the category you just created and, by clicking on `Create a new property`, create properties as following:
-    | Name             | Type   | Parameter                                    |
-    |------------------|--------|----------------------------------------------|
-    | address          | string |                                              |
-    | avg_sqft_price   | number |                                              |
-    | city             | string |                                              |
-    | contract_id      | string |                                              |
-    | price_range      | enum   | values: `OVERPRICED`, `UNDERPRICED`, `NORMAL`|
-    | purchase_price   | number |                                              |
-    | sqft             | number |                                              |
-    | sqft_price       | number |                                              |
-    | transaction_date | date   | format: `yyy-mm-dd`                          |
-    | type             | string |                                              |
+    | Name             | Type     | Parameter                                    |
+    |------------------|----------|----------------------------------------------|
+    | address          | string   |                                              |
+    | avg_sqft_price   | currency | symbol: `$`, format: `#.###,## [Symbol]`      |
+    | city             | string   |                                               |
+    | contract_id      | string   |                                               |
+    | price_range      | enum     | values: `OVERPRICED`, `UNDERPRICED`, `NORMAL` |
+    | purchase_price   | number   |                                               |
+    | sqft             | number   |                                               |
+    | sqft_price       | currency | symbol: `$`, format: `#.###,## [Symbol]`      |
+    | transaction_date | date     | format: `yyy-mm-dd`                           |
+    | type             | string   |                                               |
 13. Done!
