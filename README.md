@@ -153,7 +153,7 @@ Repeat this procedure for every custom action in the file:
     | city             | string   |                                               |
     | contract_id      | string   |                                               |
     | price_range      | enum     | values: `OVERPRICED`, `UNDERPRICED`, `NORMAL` |
-    | purchase_price   | number   |                                               |
+    | purchase_price   | currency | symbol: `$`; format: `#.###,## [Symbol]`      |
     | sqft             | number   |                                               |
     | sqft_price       | currency | symbol: `$`; format: `#.###,## [Symbol]`      |
     | transaction_date | date     | format: `yyyy-mm-dd`                          |
