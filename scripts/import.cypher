@@ -53,7 +53,8 @@
         client.annual_revenues = toFloat(row.`Annual revenues`),
         client.address = row.`address`,
         client.longitude = toFloat(row.`Longitude`),
-        client.latitude = toFloat(row.`Latitude`)
+        client.latitude = toFloat(row.`Latitude`),
+        client.nationality = row.`Nationality`
     
     with row, client
 
@@ -232,8 +233,7 @@
         loan.longitude = toFloat(row.`Longitude`),
         loan.latitude = toFloat(row.`Latitude`),
         loan.purchase_price = toFloat(row.`Purchase price`),
-        loan.sqft = toInteger(row.`Superficy feet`),
-        loan.nationality = row.`Nationality`
+        loan.sqft = toInteger(row.`Superficy feet`)
     
     merge (client:Person { uid: apoc.util.md5([row.`Owner id`]) }) set client:Client, client.`is_client` = true
     merge (client)-[:HAS_LOAN { uid: apoc.util.md5([client.uid, loan.uid]) }]->(loan)
