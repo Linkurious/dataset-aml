@@ -2,7 +2,7 @@
 //  * Name: Common Clients
 //  * Desc: Find group of bank clients (more than 3) involved in Mortgage Loans that share the same Loaners and Brokers
 //  *
-//  * Target: r
+//  * Target: target
 //  *
 //  * Custom columns:
 //  *   Broker        | b.name | text
@@ -12,15 +12,15 @@
 
 
 // Model 1
-MATCH (p{is_client:true})-[hl:HAS_LOAN]->(m:MortgageLoan)
-MATCH (r:Company)<-[hr:HAS_REALTOR]-(m)-[hb:HAS_BROKER]->(b:Company)
-WITH r, b, collect(p) + collect(m) as col, collect(hl) + collect(hr) + collect(hb) as rel
-WHERE size(col) > 3
-RETURN r, b, col, rel
+MATCH loans = (p { is_client: true })-[hl:HAS_LOAN]->(m:MortgageLoan)
+MATCH loan_context = (r:Company)<-[hr:HAS_REALTOR]-(m)-[hb:HAS_BROKER]->(b:Company)
+WITH r, b, count(p) AS clients, collect(loans) + collect(loan_context) AS context
+WHERE clients > 3
+RETURN [r,b] as target, context
 
 // Query calculating case attributes
-MATCH (r:Company)<-[hr:HAS_REALTOR]-(m)-[hb:HAS_BROKER]->(b:Company)
-WHERE id(r) in {{"target":nodeset}} and id(b) in {{"context":nodeset}}
+MATCH (r:Company)<-[hr:HAS_REALTOR]-(m:MortgageLoan)-[hb:HAS_BROKER]->(b:Company)
+WHERE id(r) in {{"target":nodeset}} and id(b) in {{"target":nodeset}}
 RETURN b,r,count(m) as len
 
 // /*
@@ -39,7 +39,7 @@ MATCH (b:BankAccount)<-[hb:HAS_BANKACCOUNT]-(p)-[hl:HAS_LOAN]->(m:MortgageLoan)
 MATCH (b)-[mt:HAS_TRANSFERED]->(:BankAccount{contract_id:"00000-00-0000000"})
 WITH b, hb, hl, p, m, max(mt.amount) as max
 WHERE toFloat(m.monthly_instalment)*100 < max
-RETURN p, m, hb, hl
+RETURN b,p, m, hb, hl
 
 // Query calculating case attributes
 MATCH (p:Person) WHERE id(p) in {{"target":nodeset}}
