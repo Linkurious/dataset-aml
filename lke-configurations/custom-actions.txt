@@ -1,12 +1,4 @@
 // /*
-//  * Name: Expand Edges
-//  * Desc: Expand all the connections of the relevant type between two nodes connected by an aggregated connection. Useful to unfold aggregated transactions created with Aggregate all transactions.
-//  * 
-//  * queryId: replace <XXX> with the id of the "Expand Edges" query template
-//  */
-{{baseurl}}plugins/aml-transactions?queryId=<XXX>&sourceKey={{sourcekey}}&param_number_EdgeID={{edge:HAS_TRANSFERED_AGG}}
-
-// /*
 //  * Name: Check Real Estate Value
 //  * Desc: Compute analysis on a set of Real Estate to check whether the transactions are UNDER or OVER price
 //  * 
