@@ -129,11 +129,6 @@
             "displayName": false,
             "properties": []
         },
-        "HAS_TRANSFERED_AGG": {
-            "active": true,
-            "displayName": true,
-            "properties": []
-        },
         "IS_EMPLOYEE_OF": {
             "active": true,
             "displayName": false,

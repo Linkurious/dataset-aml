@@ -383,15 +383,3 @@
     unwind txs_to_delete as extra_tran delete extra_tran
 
     return client, loan, bank, internal_account, tx;
-
-
-// Build Aggregated Transactions
-    match (src:BankAccount)-[t:HAS_TRANSFERED]->(dst:BankAccount)
-    with src, dst, sum(t.amount) as amount, count(t) as num
-
-    merge (src)-[t2:HAS_TRANSFERED_AGG { uid: apoc.util.md5([src.uid, dst.uid]) }]->(dst)
-    set
-        t2.amount = amount,
-        t2.number_transactions = num
-
-    return src, t2, dst;

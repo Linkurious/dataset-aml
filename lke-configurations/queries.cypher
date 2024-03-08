@@ -1,40 +1,4 @@
 // /*
-//  * Name: Expand Edges
-//  * Desc: Expand all the connections of the relevant type between two nodes connected by an aggregated connection. Useful to unfold aggregated transactions created with Aggregate all transactions.
-//  */
-match (n)-[e]->(m) where id(e) = {{"EdgeID":number}}
-
-match (n)-[e2]->(m)
-where
-	type(e2) = replace(type(e), "_AGG", "")
-	and type(e2) <> type(e)
-return n, e2, m;
-
-
-// /*
-//  * Name: Aggregate All Transactions
-//  * Desc: Allows to merge every single transaction between two nodes into one edge, representing the aggregated amount of every transactions. Useful to get a synthetic view of financial activity between two bank accounts.
-//  */
-with {{"Bank Accounts":nodeset:"BankAccount"}} as list
-unwind list as src_id
-unwind list as dst_dst
-
-match (src:BankAccount)-[t:HAS_TRANSFERED]->(dst:BankAccount)
-where
-	id(src) = src_id
-    and id(dst) = dst_dst
-
-with src, dst, sum(t.amount) as amount, count(t) as num
-
-MERGE (src)-[t2:HAS_TRANSFERED_AGG { uid: apoc.util.md5([src.uid, dst.uid]) }]->(dst)
-SET
-	t2.amount = amount,
-    t2.number_transactions = num
-
-return src, t2, dst;
-
-
-// /*
 //  * Name: Check Real Estate Value
 //  * Desc: Compute analysis on a set of Real Estate to check whether the transactions are UNDER or OVER price
 //  */
@@ -70,7 +34,7 @@ match (a) where id(a) = {{"Person":node:"Person"}}
 match p = (a)-[*..4]-(b)
 where all(
     r in relationships(p)
-    where not type(r) in ["HAS_TRANSFERED", "HAS_TRANSFERED_AGG"]
+    where not type(r) in ["HAS_TRANSFERED"]
 )
 
 return p;
