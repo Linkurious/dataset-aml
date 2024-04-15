@@ -15,6 +15,11 @@
     // match (n) detach delete n;
 
 
+// Create alternative ids indices
+CREATE FULLTEXT INDEX `myAlternativeNodeIdIndex` FOR (n:`BankAccount`|`Company`|`Email`|`MortgageLoan`|`Person`|`Phone`|`RealEstateValue`) ON EACH [n.`uid`] OPTIONS { indexConfig: { `fulltext.analyzer`: 'keyword' } }
+
+CREATE FULLTEXT INDEX `myAlternativeEdgeIdIndex` FOR ()-[r:`HAS_BANKACCOUNT`|`HAS_BROKER`|`HAS_CONTROL`|`HAS_EMAIL`|`HAS_GUARANTOR`|`HAS_LOAN`|`HAS_PHONE`|`HAS_REALTOR`|`HAS_TRANSFERED`|`IS_EMPLOYEE_OF`]-() ON EACH [r.`uid`] OPTIONS { indexConfig: { `fulltext.analyzer`: 'keyword' } }
+
 // Internal info
     merge (internal_bank:Company { uid: apoc.util.md5(['00-0000000']) })
     set

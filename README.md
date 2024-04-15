@@ -44,7 +44,9 @@
         - **Password**: *\<yourPassword\>* (your Neo4j read/write password)
     - Other
         - **Alternative node ID**: uid
+        - **Alternative node ID index: myAlternativeNodeIdIndex
         - **Alternative edge ID**: uid
+        - **Alternative edge ID index: myAlternativeEdgeIdIndex
     - SEARCH INDEX SERVER
         - **Vendor**: Neo4j Search
 4. Click on `SAVE CONFIGURATION`
