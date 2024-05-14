@@ -16,9 +16,46 @@
 
 
 // Create alternative ids indices
-CREATE FULLTEXT INDEX `myAlternativeNodeIdIndex` FOR (n:`BankAccount`|`Company`|`Email`|`MortgageLoan`|`Person`|`Phone`|`RealEstateValue`) ON EACH [n.`uid`] OPTIONS { indexConfig: { `fulltext.analyzer`: 'keyword' } }
+CREATE FULLTEXT INDEX `myAlternativeNodeIdIndex` FOR (n:`BankAccount`|`Company`|`Email`|`MortgageLoan`|`Person`|`Phone`|`RealEstateValue`) ON EACH [n.`uid`] OPTIONS { indexConfig: { `fulltext.analyzer`: 'keyword' } };
 
-CREATE FULLTEXT INDEX `myAlternativeEdgeIdIndex` FOR ()-[r:`HAS_BANKACCOUNT`|`HAS_BROKER`|`HAS_CONTROL`|`HAS_EMAIL`|`HAS_GUARANTOR`|`HAS_LOAN`|`HAS_PHONE`|`HAS_REALTOR`|`HAS_TRANSFERED`|`IS_EMPLOYEE_OF`]-() ON EACH [r.`uid`] OPTIONS { indexConfig: { `fulltext.analyzer`: 'keyword' } }
+CREATE FULLTEXT INDEX `myAlternativeEdgeIdIndex` FOR ()-[r:`HAS_BANKACCOUNT`|`HAS_BROKER`|`HAS_CONTROL`|`HAS_EMAIL`|`HAS_GUARANTOR`|`HAS_LOAN`|`HAS_PHONE`|`HAS_REALTOR`|`HAS_TRANSFERED`|`IS_EMPLOYEE_OF`]-() ON EACH [r.`uid`] OPTIONS { indexConfig: { `fulltext.analyzer`: 'keyword' } };
+
+// Ensure alternative ids are unique
+CREATE CONSTRAINT BankAccount_alternative_id
+FOR (node:BankAccount) REQUIRE node.uid IS UNIQUE;
+CREATE CONSTRAINT Company_alternative_id
+FOR (node:Company) REQUIRE node.uid IS UNIQUE;
+CREATE CONSTRAINT Email_alternative_id
+FOR (node:Email) REQUIRE node.uid IS UNIQUE;
+CREATE CONSTRAINT MortgageLoan_alternative_id
+FOR (node:MortgageLoan) REQUIRE node.uid IS UNIQUE;
+CREATE CONSTRAINT Person_alternative_id
+FOR (node:Person) REQUIRE node.uid IS UNIQUE;
+CREATE CONSTRAINT Phone_alternative_id
+FOR (node:Phone) REQUIRE node.uid IS UNIQUE;
+CREATE CONSTRAINT RealEstateValue_alternative_id
+FOR (node:RealEstateValue) REQUIRE node.uid IS UNIQUE;
+
+CREATE CONSTRAINT HAS_BANKACCOUNT_alternative_id
+FOR ()-[relation:HAS_BANKACCOUNT]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_BROKER_alternative_id
+FOR ()-[relation:HAS_BROKER]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_CONTROL_alternative_id
+FOR ()-[relation:HAS_CONTROL]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_EMAIL_alternative_id
+FOR ()-[relation:HAS_EMAIL]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_GUARANTOR_alternative_id
+FOR ()-[relation:HAS_GUARANTOR]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_LOAN_alternative_id
+FOR ()-[relation:HAS_LOAN]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_PHONE_alternative_id
+FOR ()-[relation:HAS_PHONE]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_REALTOR_alternative_id
+FOR ()-[relation:HAS_REALTOR]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT HAS_TRANSFERED_alternative_id
+FOR ()-[relation:HAS_TRANSFERED]-() REQUIRE (relation.uid) IS UNIQUE;
+CREATE CONSTRAINT IS_EMPLOYEE_OF_alternative_id
+FOR ()-[relation:IS_EMPLOYEE_OF]-() REQUIRE (relation.uid) IS UNIQUE;
 
 // Internal info
     merge (internal_bank:Company { uid: apoc.util.md5(['00-0000000']) })
