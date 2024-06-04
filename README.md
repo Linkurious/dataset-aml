@@ -83,24 +83,36 @@ Repeat this procedure for every query in the file:
 6. Done!
 
 ## 6. Setting alerts
-All the *Alerts* are contained in the `lke-configurations/alerts.cypher` file
+All the *Alerts* are contained in the `lke-configurations/alerts.cypher` file.
 
 Repeat this procedure for every alert in the file:
-1. On the *Alert dashboard*, click `CREATE NEW ALERT` (more information [here](https://doc.linkurio.us/user-manual/latest/alert-dashboard/)).
-2. Fill the `Alert name` field with the value provided in the file
-3. Fill the `Description` field with the description provided in the file
-4. Turn on, if it's not, the `Enable` toggle
-   
-   ![Alert settings](assets/img/IMG_05.png)
-5. Turn on the `Share alert` toggle and select if you want to share it with all the users or with specific groups
-6. Copy the query from the file and paste it in the `Query` field
-7. Copy the target value from the file and paste it in the `Target` field
-8. Click on `ADD A COLUMN` and fill the fields with the values provided in the file
+1. On the *Alert dashboard*, click `CREATE NEW ALERT` (more information [here](https://doc.linkurio.us/user-manual/latest/alert-dashboard/))
 
-   *NOTE: repeat this step if more columns are specified in the file*
-![Alert configuration](assets/img/IMG_04.png)
-9. Click on `Save` 
-10. Done!
+2. Fill the `Alert name` field with the value provided in the file
+
+3. Fill the `Description` field with the description provided in the file
+
+4. Copy the target value from the file and paste it in the `Target` field
+   ![Alert settings](assets/img/IMG_05.png)
+
+5. For each model in the Alert:
+   1. Click on `ADD A MODEL`
+   2. Fill the `Model name` field with the value provided in the file
+   3. Fill the `Model description` field with the value provided in the file
+   4. Fill the `Model query` field with the value provided in the file
+
+6. Fill the `Query calculating case attributes` field with the value provided in the file
+
+7. Click on `ADD A COLUMN` and fill the fields with the values provided in the file 
+*NOTE: repeat this step if more columns are specified in the file* 
+
+8. Turn on the Share alert toggle and select if you want to share it with all the users or with specific groups
+
+9. Turn on, if it's not, the Enable alert toggle
+   ![Alert configuration](assets/img/IMG_04.png)
+
+10. Click on `Save` 
+11.  Done!
 
 ## 7. Setting custom actions
 All the *Custom actions* are contained in the `lke-configurations/custom-actions.txt` file
