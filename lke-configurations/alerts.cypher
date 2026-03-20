@@ -1,3 +1,7 @@
+// ########################################################################################
+// ################################ SINGLE MODEL ALERTS  ##################################
+// ########################################################################################
+
 // /*
 //  * Name: Common Clients
 //  * Desc: Find group of bank clients (more than 3) involved in Mortgage Loans that share the same Loaners and Brokers
@@ -10,8 +14,9 @@
 //  *   N. of clients | len    | number
 //  */
 
-
 // Model 1
+// Name: Common Clients
+// Desc: -
 MATCH loans = (p { is_client: true })-[hl:HAS_LOAN]->(m:MortgageLoan)
 MATCH loan_context = (r:Company)<-[hr:HAS_REALTOR]-(m)-[hb:HAS_BROKER]->(b:Company)
 WITH r, b, count(p) AS clients, collect(loans) + collect(loan_context) AS context
@@ -22,6 +27,8 @@ RETURN [r,b] as target, context
 MATCH (r:Company)<-[hr:HAS_REALTOR]-(m:MortgageLoan)-[hb:HAS_BROKER]->(b:Company)
 WHERE id(r) in {{"target":nodeset}} and id(b) in {{"target":nodeset}}
 RETURN b,r,count(m) as len
+
+// ----------------------------------------------------------------------------------------
 
 // /*
 //  * Name: Early Redemption
@@ -35,6 +42,8 @@ RETURN b,r,count(m) as len
 //  */
 
 // Model 1
+// Name: Early Redemption
+// Desc: -
 MATCH (b:BankAccount)<-[hb:HAS_BANKACCOUNT]-(p)-[hl:HAS_LOAN]->(m:MortgageLoan)
 MATCH (b)-[mt:HAS_TRANSFERED]->(:BankAccount{contract_id:"00000-00-0000000"})
 WITH b, hb, hl, p, m, max(mt.amount) as max
@@ -48,7 +57,7 @@ RETURN coalesce(p.full_name, p.name) as name, collect(m.address) as address
 
 
 // ########################################################################################
-// ################################## MULTI MODEL ALERT  ##################################
+// ################################# MULTI MODEL ALERTS  ##################################
 // ########################################################################################
 
 // /*
@@ -72,7 +81,6 @@ RETURN coalesce(p.full_name, p.name) as name, collect(m.address) as address
 // Model 1
 // Name: Discrepancy income and loan
 // Desc: A discrepancy between the usual income of the owner and the property: the most expensive property of the city is owned by an individual with no income or wealth that would not allow them to purchase such a property. 
-
 MATCH (l:MortgageLoan)<-[e:HAS_LOAN]-(p:Person) 
 with e,l,p,p.annual_revenues/36 as max_monthly_instalment
 WHERE  max_monthly_instalment < toFloat(l.monthly_instalment)
@@ -82,7 +90,6 @@ RETURN l,p,e
 // Model 2
 // Name: Risky country
 // Desc: The customer is from a country at risk
-
 MATCH (p:Person)-[e:HAS_LOAN]->(l:MortgageLoan)
 WHERE p.nationality in ["Russia","China","North Korea"]
 RETURN l,p,e
@@ -91,7 +98,6 @@ RETURN l,p,e
 // Model 3
 // Name: Location mismatch
 // Desc: The location of the property (represented by location where the loan is done) is not in relation with the buyer location. 
-
 MATCH (l:MortgageLoan)<-[e:HAS_LOAN]-(p:Person)
 WHERE point.distance(point(l),point(p))/1000 > 300
 RETURN l,p,e
@@ -100,7 +106,6 @@ RETURN l,p,e
 // Model 4
 // Name: Red flagged industry (Company has loan)
 // Desc: The company the buyer owns works for an industry that's red flagged.
-
 MATCH (l:MortgageLoan)<-[e:HAS_LOAN]-(c:Company)<-[control:HAS_CONTROL]-(p:Person)
 WHERE c.industry in ["Military/Government/Technical","Oil/Gas Transmission"]
 RETURN l,c,p,e,control
@@ -109,7 +114,6 @@ RETURN l,c,p,e,control
 // Model 5
 // Name: Red flagged industry (Person has loan)
 // Desc: The company the buyer owns works for an industry that's red flagged.
-
 MATCH (l:MortgageLoan)<-[e:HAS_LOAN]-(p:Person)-[control:HAS_CONTROL]->(c:Company)
 WHERE c.industry in ["Military/Government/Technical","Oil/Gas Transmission"]
 RETURN l,c,p,e,control
