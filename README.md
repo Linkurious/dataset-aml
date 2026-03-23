@@ -3,9 +3,9 @@
 
 <!-- omit in toc -->
 ### Prerequisites: 
-- a Neo4j v4 server with `admin` or `architect` access rights (minimum supported version: v4.2)
-- APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/labs/apoc/))
-- a Linkurious Enterprise 3.0.4 or higher with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
+- a Neo4j v5+ server with `admin` or `architect` access rights
+- APOC procedures are enabled in Neo4j (more information [here](https://neo4j.com/docs/apoc/current/))
+- a Linkurious Enterprise v4.1+ with `admin` access rights ([getting started guide](https://doc.linkurio.us/admin-manual/latest/getting-started/))
 
 <!-- auto generated with https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one -->
 <!-- omit in toc -->
@@ -44,7 +44,9 @@
         - **Password**: *\<yourPassword\>* (your Neo4j read/write password)
     - Other
         - **Alternative node ID**: uid
+        - **Alternative node ID index**: myAlternativeNodeIdIndex
         - **Alternative edge ID**: uid
+        - **Alternative edge ID index**: myAlternativeEdgeIdIndex
     - SEARCH INDEX SERVER
         - **Vendor**: Neo4j Search
 4. Click on `SAVE CONFIGURATION`
