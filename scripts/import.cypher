@@ -403,7 +403,7 @@ FOR ()-[relation:IS_EMPLOYEE_OF]-() REQUIRE (relation.uid) IS UNIQUE;
 
 
 // Inject specific patterns
-    // Create Early loan reimboursement
+    // Create Early loan reimbursement
     with '2020-04-20' as early_redemption_date
     match (client:Person { uid: apoc.util.md5(['71-2031902']) })-[:HAS_LOAN]->(loan:MortgageLoan)
 
